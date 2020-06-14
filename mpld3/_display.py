@@ -138,6 +138,8 @@ class NumpyEncoder(json.JSONEncoder):
             return numpy.asscalar(obj)
         elif isinstance(obj, (numpy.ndarray,)):
             return obj.tolist()
+		elif isinstance(obj,(numpy.ndarray,)):
+            return obj.tolist()
         return json.JSONEncoder.default(self, obj)
 
 
